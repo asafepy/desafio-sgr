@@ -41,11 +41,15 @@ INSTALLED_APPS = [
 
 API_SGR_APPS = [
     'apps.radio',
-    'apps.programacao',
-    'apps.programa',
 ]
 
-INSTALLED_APPS = INSTALLED_APPS + API_SGR_APPS
+OTHER_APPS = [
+    'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+]
+
+INSTALLED_APPS = INSTALLED_APPS + API_SGR_APPS + OTHER_APPS
 
 
 
