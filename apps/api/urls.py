@@ -14,13 +14,9 @@ router.register(r'programacao', views.ProgramacaoViewSet)
 
 helper_patterns = [
     path('', include('rest_framework.urls', namespace='rest_framework')),
-
     path('user/', UserCreateViewSet.as_view(), name='user'),
 	path('api-token-auth/', ObtainAuthToken.as_view()),
-
     path('authenticate/', LoginAuthToken.as_view(), name='authenticate'),
-    # path('relatorio/', views.report_list, name='relatorio'),
-    # path('importacao/', views.importacao, name='importacao'),
 ]
 
 urlpatterns = [

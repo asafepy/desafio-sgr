@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import RedirectView
+
 
 admin.site.site_header = "SGR Admin"
 admin.site.site_title = "SGR Admin Portal"
@@ -22,5 +24,6 @@ admin.site.index_title = "Bem vindo Admin da SGR"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('apps.api.urls'))
+    path('api/', include('apps.api.urls')),
+    path('', RedirectView.as_view(url='/api'), name='go-to-api'),
 ]
