@@ -3,6 +3,8 @@ from apps.core.views import PermissionTokenLoginRequiredMixin
 from .models import Radio, Programa, Programacao
 from .serializers import RadioSerializer, ProgramaSerializer, ProgramacaoSerializer
 from .filters import ProgramaFilter
+from django.db.models import Q
+
 
 class RadioViewSet(viewsets.ModelViewSet):
     queryset = Radio.objects.all()

@@ -1,0 +1,38 @@
+[
+{
+  "model": "radio.programa",
+  "pk": 1,
+  "fields": {
+    "nome": "Jogo de futebol",
+    "categoria": "futebol",
+    "horario_exibicao": "15:00:00"
+  }
+},
+{
+  "model": "radio.programa",
+  "pk": 2,
+  "fields": {
+    "nome": "MultMusic",
+    "categoria": "musica",
+    "horario_exibicao": "15:00:00"
+  }
+},
+{
+  "model": "radio.programa",
+  "pk": 3,
+  "fields": {
+    "nome": "Os Pingos Nos Is",
+    "categoria": "politica",
+    "horario_exibicao": "19:30:00"
+  }
+},
+{
+  "model": "radio.programa",
+  "pk": 4,
+  "fields": {
+    "nome": "Debate Ideais Culturais",
+    "categoria": "cultura",
+    "horario_exibicao": "20:00:00"
+  }
+}
+]

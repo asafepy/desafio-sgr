@@ -1,0 +1,15 @@
+[
+{
+  "model": "radio.programacao",
+  "pk": 1,
+  "fields": {
+    "nome": "Dia dos Pais",
+    "radio": 1,
+    "programa": [
+      1,
+      2,
+      3
+    ]
+  }
+}
+]
