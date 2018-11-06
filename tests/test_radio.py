@@ -27,17 +27,13 @@ class RadioTestCase(TestCase):
     def test_get_radio(self):
 
         client = Client()
-        var = 'list'
         response = client.get('/api/radio/1/')
-        # import pdb; pdb.set_trace()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['nome'] , 'Nova Radio')
 
     def test_get_radio_error(self):
 
         client = Client()
-        var = 'list'
         response = client.get('/api/radio/2/')
-        # import pdb; pdb.set_trace()
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEqual(response.data['detail'] , "Não encontrado.")
