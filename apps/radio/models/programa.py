@@ -1,12 +1,11 @@
 from django.db import models
-from django.utils.translation import gettext as _
 
 class Programa(models.Model):
     CATEGORIA_CHOICES = (
-        ('futebol', _("Futebol")),
-        ('musica', _("Musica")),
-        ('politica', _("Política")),
-        ('cultura', _("Cultura"))
+        ('futebol', "Futebol"),
+        ('musica', "Musica"),
+        ('politica', "Política"),
+        ('cultura', "Cultura")
     )
 
     nome = models.CharField("Nome do programa", max_length=100)
