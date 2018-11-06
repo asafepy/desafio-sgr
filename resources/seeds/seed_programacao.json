@@ -5,6 +5,7 @@
   "fields": {
     "nome": "Dia dos Pais",
     "radio": 1,
+    "data_exibicao": "2018-11-23",
     "programa": [
       1,
       2,
