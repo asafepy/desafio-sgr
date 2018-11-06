@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import Radio, Programa, Programacao
+from .models.radio import Radio
+from .models.programa import Programa
+from .models.programacao import Programacao
 
 
 class RadioSerializer(serializers.HyperlinkedModelSerializer):

@@ -1,6 +1,8 @@
 from rest_framework import generics, viewsets, views
 from apps.core.views import PermissionTokenLoginRequiredMixin
-from .models import Radio, Programa, Programacao
+from .models.radio import Radio
+from .models.programa import Programa
+from .models.programacao import Programacao
 from .serializers import RadioSerializer, ProgramaSerializer, ProgramacaoSerializer
 from .filters import ProgramaFilter
 from django.db.models import Q
