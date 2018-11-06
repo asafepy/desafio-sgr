@@ -1,14 +1,14 @@
 from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
-# from apps.radio import views
+from apps.radio import views
 from apps.core.views import LoginAuthToken, ObtainAuthToken, UserCreateViewSet
 
 
 
 router = routers.DefaultRouter()
-# router.register(r'movimento', views.MovesViewSet)
-# router.register(r'origem', views.OriginMovementViewSet)
-# router.register(r'regiao', views.RegionViewSet)
+router.register(r'radio', views.RadioViewSet)
+router.register(r'programa', views.ProgramaViewSet)
+router.register(r'programacao', views.ProgramacaoViewSet)
 
 
 
@@ -19,8 +19,8 @@ helper_patterns = [
 	path('api-token-auth/', ObtainAuthToken.as_view()),
 
     path('authenticate/', LoginAuthToken.as_view(), name='authenticate'),
-    path('relatorio/', views.report_list, name='relatorio'),
-    path('importacao/', views.importacao, name='importacao'),
+    # path('relatorio/', views.report_list, name='relatorio'),
+    # path('importacao/', views.importacao, name='importacao'),
 ]
 
 urlpatterns = [
