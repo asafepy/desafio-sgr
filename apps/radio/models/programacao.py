@@ -1,7 +1,9 @@
 from django.db import models
 from apps.radio.models import Radio
 from apps.radio.models import Programa
-    
+from django.db.models import Case, CharField, Value, When
+from django.db.models import Avg, Count, Min, Sum
+
 class Programacao(models.Model):
     
     nome = models.CharField("Nome Programação", max_length=100)
@@ -18,12 +20,26 @@ class Programacao(models.Model):
         verbose_name_plural = 'Programações'
 
     def get_programas(self):
-        id_programas = []
-        print(self.programa.all())
-        for i in self.programa.all():
-            id_programas.append(i.id)
-        print(id_programas)
+        
+    #     Client.objects.annotate(
+    #         rank=Case(
+    #             When(programa__=Client.GOLD, then=Value('5%')),
+    #             When(account_type=Client.PLATINUM, then=Value('10%')),
+    #             default=Value('0%'),
+    #             output_field=CharField(),
+    #         ),
+    #     ).values_list('name', 'discount')
+    #     id_programas = []
+    #     prioridade_futebol = []
+    #     p = self.programa.all().order_by('categoria')
+    #     print(p)
 
-        programas = Programa.objects.filter(id__in=id_programas)
-        print(programas)
+        # for item in self.programa.all():
+        #     if item.categoria == 1:
+        #     prioridade_futebol
+        #     id_programas.append()
+        # print(id_programas)
+
+        # programas = Programa.objects.filter(id__in=id_programas)
+        # print(programas)
         return {}

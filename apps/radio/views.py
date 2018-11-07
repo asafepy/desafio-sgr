@@ -7,7 +7,6 @@ from .serializers import RadioSerializer, ProgramaSerializer, ProgramacaoSeriali
 from .filters import ProgramaFilter
 from django.db.models import Q
 
-
 class RadioViewSet(viewsets.ModelViewSet):
     queryset = Radio.objects.all()
     serializer_class = RadioSerializer
