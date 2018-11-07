@@ -2,10 +2,10 @@ from django.db import models
 
 class Programa(models.Model):
     CATEGORIA_CHOICES = (
-        ('futebol', "Futebol"),
-        ('musica', "Musica"),
-        ('politica', "Política"),
-        ('cultura', "Cultura")
+        (1, "Futebol"),
+        (2, "Musica"),
+        (3, "Política"),
+        (4, "Cultura")
     )
 
     nome = models.CharField("Nome do programa", max_length=100)
@@ -16,5 +16,7 @@ class Programa(models.Model):
         return self.nome
         
     class Meta:
+        ordering = ('categoria', 'horario_exibicao')
+
         verbose_name = 'Programa'
         verbose_name_plural = 'Programas'

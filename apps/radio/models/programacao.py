@@ -17,5 +17,13 @@ class Programacao(models.Model):
         verbose_name = 'Programação'
         verbose_name_plural = 'Programações'
 
+    def get_programas(self):
+        id_programas = []
+        print(self.programa.all())
+        for i in self.programa.all():
+            id_programas.append(i.id)
+        print(id_programas)
 
-
+        programas = Programa.objects.filter(id__in=id_programas)
+        print(programas)
+        return {}

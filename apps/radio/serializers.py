@@ -18,9 +18,15 @@ class ProgramaSerializer(serializers.HyperlinkedModelSerializer):
 
 class ProgramacaoSerializer(serializers.HyperlinkedModelSerializer):
     radio = RadioSerializer(read_only=True)
-    programa = ProgramaSerializer(read_only=True, many=True)
+    # programa = ProgramaSerializer(read_only=True, many=True)
     
+
+    get_programas = serializers.SerializerMethodField()
+
+    def get_programas(self, obj):
+        return obj.get_programas()
+
 
     class Meta:
         model = Programacao
-        fields = ('url', 'nome','radio', 'programa',)
+        fields = ('url', 'nome','radio', 'get_programas',)
