@@ -11,7 +11,7 @@ router.register(r'radio',
 router.register(r'programa', 
                 views.ProgramaViewSet)
 router.register(r'programacao', 
-                views.ProgramacaoViewSet)
+                views.GradeProgramacaoViewSet)
 
 helper_patterns = [
     path('', include('rest_framework.urls', 

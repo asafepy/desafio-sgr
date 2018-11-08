@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models.radio import Radio
 from .models.programa import Programa
-from .models.programacao import Programacao
+from .models.programacao import GradeProgramacao
 
 
 class RadioSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,17 +16,8 @@ class ProgramaSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'nome',)
 
 
-class ProgramacaoSerializer(serializers.HyperlinkedModelSerializer):
-    radio = RadioSerializer(read_only=True)
-    # programa = ProgramaSerializer(read_only=True, many=True)
-    
-
-    get_programas = serializers.SerializerMethodField()
-
-    def get_programas(self, obj):
-        return obj.get_programas()
-
+class GradeProgramacaoSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        model = Programacao
-        fields = ('url', 'nome','radio', 'get_programas',)
+        model = GradeProgramacao
+        fields = ('url', 'nome','radio',)

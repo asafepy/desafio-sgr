@@ -2,8 +2,8 @@ from rest_framework import generics, viewsets, views
 from apps.core.views import PermissionTokenLoginRequiredMixin
 from .models.radio import Radio
 from .models.programa import Programa
-from .models.programacao import Programacao
-from .serializers import RadioSerializer, ProgramaSerializer, ProgramacaoSerializer
+from .models.programacao import GradeProgramacao
+from .serializers import RadioSerializer, ProgramaSerializer, GradeProgramacaoSerializer
 from .filters import ProgramaFilter
 from django.db.models import Q
 
@@ -28,6 +28,6 @@ class ProgramaViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-class ProgramacaoViewSet(viewsets.ModelViewSet):
-    queryset = Programacao.objects.all()
-    serializer_class = ProgramacaoSerializer
+class GradeProgramacaoViewSet(viewsets.ModelViewSet):
+    queryset = GradeProgramacao.objects.all()
+    serializer_class = GradeProgramacaoSerializer
