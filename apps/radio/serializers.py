@@ -13,7 +13,7 @@ class RadioSerializer(serializers.HyperlinkedModelSerializer):
 class ProgramaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Programa
-        fields = ('url', 'nome',)
+        fields = ('url', 'nome','categoria', 'horario_exibicao')
 
 
 class GradeProgramacaoSerializer(serializers.HyperlinkedModelSerializer):

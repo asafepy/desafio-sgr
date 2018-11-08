@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "nome": "Jogo de futebol",
-    "categoria": "futebol",
+    "categoria": 1,
     "horario_exibicao": "15:00:00"
   }
 },
@@ -13,7 +13,7 @@
   "pk": 2,
   "fields": {
     "nome": "MultMusic",
-    "categoria": "musica",
+    "categoria": 2,
     "horario_exibicao": "15:00:00"
   }
 },
@@ -22,7 +22,7 @@
   "pk": 3,
   "fields": {
     "nome": "Os Pingos Nos Is",
-    "categoria": "politica",
+    "categoria": 3,
     "horario_exibicao": "19:30:00"
   }
 },
@@ -31,8 +31,26 @@
   "pk": 4,
   "fields": {
     "nome": "Debate Ideais Culturais",
-    "categoria": "cultura",
+    "categoria": 4,
     "horario_exibicao": "20:00:00"
+  }
+},
+{
+  "model": "radio.programa",
+  "pk": 5,
+  "fields": {
+    "nome": "Jogo de futebol 2",
+    "categoria": 1,
+    "horario_exibicao": "12:00:00"
+  }
+},
+{
+  "model": "radio.programa",
+  "pk": 6,
+  "fields": {
+    "nome": "debate qualquer",
+    "categoria": 4,
+    "horario_exibicao": "12:00:00"
   }
 }
 ]
