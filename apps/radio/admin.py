@@ -20,6 +20,9 @@ class GradeAdmin(admin.ModelAdmin):
         GradeProgramacaoInline,
     ]
 
+    class Media:
+        js = ('assets/js/formset_handlers.js',)  
+
 
 admin.site.register(Radio, RadioAdmin)
 admin.site.register(Grade, GradeAdmin)

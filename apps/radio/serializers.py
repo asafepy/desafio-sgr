@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models.radio import Radio
 from .models.programa import Programa
-from .models.programacao import GradeProgramacao
+from .models.programacao import GradeProgramacao, Grade
 
 
 class RadioSerializer(serializers.HyperlinkedModelSerializer):
@@ -13,11 +13,20 @@ class RadioSerializer(serializers.HyperlinkedModelSerializer):
 class ProgramaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Programa
-        fields = ('url', 'nome','categoria', 'horario_exibicao')
+        fields = ('id', 'url', 'nome', 'categoria')
 
 
-class GradeProgramacaoSerializer(serializers.HyperlinkedModelSerializer):
+class GradeSerializer(serializers.HyperlinkedModelSerializer):
+
+    get_programa_atual = serializers.SerializerMethodField()
+    related_name = serializers.StringRelatedField(many=True)
+
+    def get_programa_atual(self, obj):
+        return obj.get_programa_atual()
 
     class Meta:
-        model = GradeProgramacao
-        fields = ('url', 'nome','radio',)
+        model = Grade
+        fields = ('url','data_exibicao', 'radio', 'related_name',)
+
+
+

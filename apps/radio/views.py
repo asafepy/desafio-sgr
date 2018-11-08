@@ -3,7 +3,7 @@ from apps.core.views import PermissionTokenLoginRequiredMixin
 from .models.radio import Radio
 from .models.programa import Programa
 from .models.programacao import GradeProgramacao
-from .serializers import RadioSerializer, ProgramaSerializer, GradeProgramacaoSerializer
+from .serializers import RadioSerializer, ProgramaSerializer, GradeSerializer
 from .filters import ProgramaFilter
 from django.db.models import Q
 
@@ -29,4 +29,4 @@ class ProgramaViewSet(viewsets.ModelViewSet):
 
 class GradeProgramacaoViewSet(viewsets.ModelViewSet):
     queryset = GradeProgramacao.objects.all()
-    serializer_class = GradeProgramacaoSerializer
+    serializer_class = GradeSerializer

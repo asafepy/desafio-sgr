@@ -1,7 +1,7 @@
 (function($) {
     
     function resetOption(mensagem){
-        $('#id_prgrama')
+        $('.field-programa > div > select')
             .find('option')
             .remove()
             .end()
@@ -9,13 +9,13 @@
             .val('');
     }
     function resetOption2(){
-        $('#id_prgrama')
+        $('.field-programa > div > select')
             .find('option')
             .remove();
     }
 
     function getProgramas(radio){
-
+        alert("entrou");
         $.get({
             type: "GET",
             url: "/api/programa/",
@@ -27,10 +27,10 @@
 
                 let htmlOption;
                 $.each(data, function(key, val){
-                    $("#id_prgrama option[value='"+val.id+"']").remove();
+                    $(".field-programa > div > select option[value='"+val.id+"']").remove();
                     htmlOption += "<option value='"+val.id+"'>"+val.nome+"</option>";
                 });
-                $("#id_prgrama").append(htmlOption);
+                $(".field-programa > div > select").append(htmlOption);
 
             }
         });
@@ -39,8 +39,8 @@
     $(document).ready(function() {
         
         url = window.location.href; 
-        if( url.indexOf("change") == -1){
-            resetOption("Selecione uma rádio");
+        if( url.indexOf("change") != -1){
+            
         }
         
 
@@ -48,9 +48,9 @@
             getProgramas(this.value);
         });
 
-        // $('#id_programa').on('change', function() {
-        //     alert(this.value);
-        // });
+        $('.field-programa > div > select').on('change', function() {
+            alert(this.value);
+        });
     });
 
 })(django.jQuery);
