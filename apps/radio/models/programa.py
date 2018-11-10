@@ -12,7 +12,7 @@ class Programa(models.Model):
 
     nome = models.CharField("Nome do programa", max_length=100)
     categoria = models.IntegerField('Categoria', choices=CATEGORIA_CHOICES)
-    radio = models.ForeignKey(Radio, verbose_name="Rádio", on_delete=models.CASCADE)
+    radio = models.ForeignKey(Radio, verbose_name="Rádio", related_name='tracks', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome

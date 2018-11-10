@@ -1,6 +1,6 @@
 from django.contrib import admin
 from apps.radio.models import Radio, Programa, GradeProgramacao, Grade
-
+from apps.radio.forms import GradeProgramacaoForm
 
 class ProgramaInline(admin.TabularInline):
     model = Programa
@@ -14,12 +14,11 @@ class RadioAdmin(admin.ModelAdmin):
 class GradeProgramacaoInline(admin.TabularInline):
     model = GradeProgramacao
     extra = 1
-    
+
 class GradeAdmin(admin.ModelAdmin):
     inlines = [
         GradeProgramacaoInline,
     ]
-
     class Media:
         js = ('assets/js/formset_handlers.js',)  
 

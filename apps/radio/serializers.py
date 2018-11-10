@@ -3,30 +3,45 @@ from .models.radio import Radio
 from .models.programa import Programa
 from .models.programacao import GradeProgramacao, Grade
 
-
-class RadioSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Radio
-        fields = ('url', 'nome',)
-
-
 class ProgramaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Programa
         fields = ('id', 'url', 'nome', 'categoria')
 
 
-class GradeSerializer(serializers.HyperlinkedModelSerializer):
-
-    get_programa_atual = serializers.SerializerMethodField()
-    related_name = serializers.StringRelatedField(many=True)
-
-    def get_programa_atual(self, obj):
-        return obj.get_programa_atual()
+        
+class RadioSerializer(serializers.HyperlinkedModelSerializer):
+    
+    programas = serializers.SerializerMethodField()
 
     class Meta:
+        model = Radio
+        fields = ('url', 'nome', 'programas')
+    
+    def programas(self, obj):
+        return obj.programas()
+
+
+
+class GradeProgramacaoSerializer(serializers.HyperlinkedModelSerializer):
+    
+    grade = serializers.SerializerMethodField()
+    
+    class Meta:
         model = Grade
-        fields = ('url','data_exibicao', 'radio', 'related_name',)
+        fields = ('id', 'data_exibicao', 'radio', 'grade',)
+    
+    def grade(self, obj):
+        return obj.grade()
 
 
+class ProgramaAtualSerializer(serializers.HyperlinkedModelSerializer):
+    
+    programa_atual = serializers.SerializerMethodField()
 
+    class Meta:
+        model = Radio
+        fields = ('id', 'nome', 'programa_atual',)
+    
+    def programa_atual(self, obj):
+        return obj.programa_atual()

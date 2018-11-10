@@ -6,12 +6,14 @@ from apps.core.views import (LoginAuthToken,
                              UserCreateViewSet)
 
 router = routers.DefaultRouter()
+
 router.register(r'radio', 
                 views.RadioViewSet)
-router.register(r'programa', 
-                views.ProgramaViewSet)
-router.register(r'programacao', 
+
+router.register(r'grade-programacao', 
                 views.GradeProgramacaoViewSet)
+router.register(r'pragrama-atual', 
+                views.ProgramaAtualViewSet)
 
 helper_patterns = [
     path('', include('rest_framework.urls', 

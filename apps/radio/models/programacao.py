@@ -7,6 +7,9 @@ class Grade(models.Model):
     data_exibicao = models.DateField("Data de exibição", auto_now=False, auto_now_add=False, )
     radio = models.ForeignKey(Radio, verbose_name="Rádio", on_delete=models.CASCADE)
 
+    def grade(self):
+        return GradeProgramacao.objects.filter(grade_id=self.pk).values("horario_inicio", "horario_fim", "programa__nome")
+
     def __str__(self):
         return self.radio.nome
 
@@ -16,7 +19,9 @@ class Grade(models.Model):
 
 class GradeProgramacao(models.Model):
     
-    horario_exibicao = models.TimeField("Horário de exibição", auto_now=False, auto_now_add=False)
+    
+    horario_inicio = models.TimeField("Horário de Início", auto_now=False, auto_now_add=False, blank=True, null=True)
+    horario_fim = models.TimeField("Horário de Fim", auto_now=False, auto_now_add=False, blank=True, null=True)
     grade = models.ForeignKey(Grade, verbose_name="Grade de Programação", related_name='grade_programacao',  on_delete=models.CASCADE)
     programa = models.ForeignKey(Programa, related_name='programas', verbose_name="Programa", on_delete=models.CASCADE)
 
