@@ -20,10 +20,46 @@ class GradeSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = Grade
-        fields = ('id', 'data_exibicao', 'radio', 'grade',)
+        fields = ('id', 'url', 'data_exibicao', 'radio', 'grade',)
     
     def grade(self, obj):
         return obj.grade()
+
+    def to_representation(self, instance):
+        
+        representation = super(GradeSerializer, self).to_representation(instance)
+        representation['radio'] = instance.radio.nome
+
+        return representation
+    
+
+class GradeListSerializer(serializers.HyperlinkedModelSerializer):
+    
+    class Meta:
+        model = Grade
+        fields = ('url', 'radio',)
+
+    def to_representation(self, instance):
+        
+        representation = super(GradeListSerializer, self).to_representation(instance)
+        representation['radio'] = instance.radio.nome
+
+        return representation
+
+class ProgramaAtualListSerializer(serializers.HyperlinkedModelSerializer):
+    
+    class Meta:
+        model = Radio
+        fields = ('nome', 'url',)
+
+    def to_representation(self, instance):
+        
+        url = str(self.context['request'].build_absolute_uri()).strip()+str(instance.pk)+'/'
+        
+        representation = super(ProgramaAtualListSerializer, self).to_representation(instance)
+        representation['url'] = url
+
+        return representation
 
 
 class ProgramaAtualSerializer(serializers.HyperlinkedModelSerializer):

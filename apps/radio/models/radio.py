@@ -19,6 +19,10 @@ class Radio(models.Model):
         from apps.radio.models.programa import Programa
         return Programa.objects.filter(radio=self.pk).values("id", "nome")
 
+
+    def make_url(self):
+        return '/api/programa-atual/',self.pk,'/'
+
     def programa_atual(self):
         from apps.radio.models.programacao import GradeProgramacao
         grade_programacao = GradeProgramacao.objects.filter(Q(horario_inicio__lte=NOW) & 

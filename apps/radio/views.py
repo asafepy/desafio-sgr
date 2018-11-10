@@ -7,7 +7,9 @@ from .models.programa import Programa
 from .models.programacao import GradeProgramacao, Grade
 from .serializers import (RadioSerializer, 
                           GradeSerializer, 
-                          ProgramaAtualSerializer)
+                          GradeListSerializer,
+                          ProgramaAtualSerializer,
+                          ProgramaAtualListSerializer)
 
 
 class RadioViewSet(viewsets.ViewSet):
@@ -27,7 +29,7 @@ class GradeViewSet(viewsets.ViewSet):
      
     def list(self, request):
         queryset = Grade.objects.all()
-        serializer = GradeSerializer(queryset, many=True, context={'request': request})
+        serializer = GradeListSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
@@ -38,6 +40,11 @@ class GradeViewSet(viewsets.ViewSet):
 
 
 class ProgramaAtualViewSet(viewsets.ViewSet):
+
+    def list(self, request):
+        queryset = Radio.objects.all()
+        serializer = ProgramaAtualListSerializer(queryset, many=True, context={'request': request})
+        return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
         queryset = Radio.objects.all()

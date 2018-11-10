@@ -44,7 +44,7 @@ Rules:
 	- /api/grade-programacao/
  
 4. grade de programação de cada rádio;  
-	- python core/modules/crawler.py
+	- /api/grade-programacao/{id_radio}
         
 ## Apps
  
