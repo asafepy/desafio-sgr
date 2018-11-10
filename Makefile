@@ -6,6 +6,8 @@ seed:
 	./manage.py loaddata resources/seeds/seed_programa.json
 	./manage.py loaddata resources/seeds/seed_programacao.json
 
+test:
+	./manage.py test
 
 migrate:
 	./manage.py makemigrations
