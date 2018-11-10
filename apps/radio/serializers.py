@@ -10,10 +10,9 @@ class ProgramaSerializer(serializers.HyperlinkedModelSerializer):
 
 
         
-class RadioSerializer(serializers.HyperlinkedModelSerializer):
+class RadioSerializer(serializers.ModelSerializer):
     
     programas = serializers.SerializerMethodField()
-
     class Meta:
         model = Radio
         fields = ('url', 'nome', 'programas')
@@ -23,7 +22,7 @@ class RadioSerializer(serializers.HyperlinkedModelSerializer):
 
 
 
-class GradeProgramacaoSerializer(serializers.HyperlinkedModelSerializer):
+class GradeSerializer(serializers.HyperlinkedModelSerializer):
     
     grade = serializers.SerializerMethodField()
     

@@ -6,14 +6,15 @@ from apps.core.views import (LoginAuthToken,
                              UserCreateViewSet)
 
 router = routers.DefaultRouter()
+router.register(r'radio', views.RadioViewSet, basename='radio')
+router.register(r'grade-programacao', views.GradeViewSet, basename='grade-programacao')
 
-router.register(r'radio', 
-                views.RadioViewSet)
+radio_list = views.RadioViewSet.as_view({'get': 'list'})
+radio_detail = views.RadioViewSet.as_view({'get': 'retrieve'})
 
-router.register(r'grade-programacao', 
-                views.GradeProgramacaoViewSet)
-router.register(r'pragrama-atual', 
-                views.ProgramaAtualViewSet)
+grade_programacao_list = views.GradeViewSet.as_view({'get': 'list'})
+grade_programacao_detail = views.GradeViewSet.as_view({'get': 'retrieve'})
+
 
 helper_patterns = [
     path('', include('rest_framework.urls', 
