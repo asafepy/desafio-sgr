@@ -10,15 +10,14 @@ class Radio(models.Model):
 
     def __str__(self):
         return self.nome
+        
     class Meta:
         verbose_name = 'Rádio'
         verbose_name_plural = 'Rádios'
 
-
     def programas(self):
         from apps.radio.models.programa import Programa
         return Programa.objects.filter(radio=self.pk).values("id", "nome")
-
 
     def programa_atual(self):
         from apps.radio.models.programacao import GradeProgramacao
@@ -28,7 +27,6 @@ class Radio(models.Model):
         for item in grade_programacao:
             if item.programa.categoria == 1:
                 return {'programa': item.programa.nome}
-            
             return {'programa':item.programa.nome}
        
         return {}

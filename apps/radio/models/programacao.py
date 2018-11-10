@@ -19,7 +19,6 @@ class Grade(models.Model):
 
 class GradeProgramacao(models.Model):
     
-    
     horario_inicio = models.TimeField("Horário de Início", auto_now=False, auto_now_add=False, blank=True, null=True)
     horario_fim = models.TimeField("Horário de Fim", auto_now=False, auto_now_add=False, blank=True, null=True)
     grade = models.ForeignKey(Grade, verbose_name="Grade de Programação", related_name='grade_programacao',  on_delete=models.CASCADE)
