@@ -34,21 +34,21 @@ Rules:
 
 # Endpoints:
 
-####1. lista de todos os endpoins do sistema de rádio;  
+#### 1. lista de todos os endpoins do sistema de rádio;  
 	
   - /api/
 
-####2. programa que está no ar no momento;
+#### 2. programa que está no ar no momento;
 	
   - /api/programa-atual/
   - /api/programa-atual/{id_radio}/
 
-####3. lista de programas de cada rádio;  
+#### 3. lista de programas de cada rádio;  
 	
   - /api/radio/
   - /api/radio/{id_radio}/
  
-####4. grade de programação de cada rádio;  
+#### 4. grade de programação de cada rádio;  
 	
   - /api/grade/
   - /api/grade/{id_radio}/
