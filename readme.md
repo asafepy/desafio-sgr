@@ -29,7 +29,8 @@ Rules:
  pip install -r requirements.txt
  make test
  make seed
- make serve
+ make server
+ make server_stop
 ```
 
 # Endpoints:
