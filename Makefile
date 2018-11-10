@@ -1,4 +1,4 @@
-
+.SILENT:
 
 seed:
 	./manage.py loaddata resources/seeds/seed_auth.json
@@ -10,3 +10,9 @@ seed:
 migrate:
 	./manage.py makemigrations
 	./manage.py migrate
+
+server:
+	./manage.py runserver 127.0.0.1:8080 > /dev/null 2>&1 & echo 'Server Created on <http://127.0.0.1:8080>'
+
+server_stop:
+	kill `(lsof -t -i:8080)` & echo 'Server Stopped!'
