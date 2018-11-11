@@ -28,7 +28,9 @@ class Radio(models.Model):
         grade_programacao = GradeProgramacao.objects.filter(Q(horario_inicio__lte=NOW) & 
                                                             Q(horario_fim__gte=NOW) & 
                                                             Q(grade__radio=self.pk))
+        print(grade_programacao)
         for item in grade_programacao:
+            print(item.programa.categoria)
             if item.programa.categoria == 1:
                 return {'programa': item.programa.nome}
             return {'programa':item.programa.nome}

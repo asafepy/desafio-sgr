@@ -1,7 +1,7 @@
 from django.db import models
 from apps.radio.models import Radio
 from apps.radio.models import Programa
-    
+
 class Grade(models.Model):
     
     data_exibicao = models.DateField("Data de exibição", auto_now=False, auto_now_add=False, )
@@ -22,7 +22,12 @@ class GradeProgramacao(models.Model):
     horario_inicio = models.TimeField("Horário de Início", auto_now=False, auto_now_add=False, blank=True, null=True)
     horario_fim = models.TimeField("Horário de Fim", auto_now=False, auto_now_add=False, blank=True, null=True)
     grade = models.ForeignKey(Grade, verbose_name="Grade de Programação", related_name='grade_programacao',  on_delete=models.CASCADE)
-    programa = models.ForeignKey(Programa, related_name='programas', verbose_name="Programa", on_delete=models.CASCADE)
+    programa = models.ForeignKey(Programa, 
+                                 related_name='programas', 
+                                #  limit_choices_to={'radio_id': self.grade__radio}, 
+                                 verbose_name="Programa", 
+                                 on_delete=models.CASCADE)
+
 
     class Meta:
         verbose_name = 'Programa'
@@ -32,3 +37,5 @@ class GradeProgramacao(models.Model):
         programas = self.programa
         print(programas)
         return {}
+
+
