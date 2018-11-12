@@ -23,21 +23,18 @@ class ProgramacaoTestCase(TestCase):
 
     def test_list_programacao(self):
         
-        client = Client()
-        response = client.get('/api/programacao/')
+        response = self.client.get('/api/programacao/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data[0]['nome'] , 'Programacao Teste')
 
     def test_get_programacao(self):
 
-        client = Client()
-        response = client.get('/api/programacao/1/')
+        response = self.client.get('/api/programacao/1/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['nome'] , 'Programacao Teste')
 
     def test_get_programacao_error(self):
 
-        client = Client()
-        response = client.get('/api/programacao/2/')
+        response = self.client.get('/api/programacao/2/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEqual(response.data['detail'] , "Não encontrado.")

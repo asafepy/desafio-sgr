@@ -9,7 +9,7 @@ from apps.radio.models.programa import Programa
 class ProgramaTestCase(TestCase):
 
     def setUp(self):
-        Programa.objects.create(nome='Programa Teste', categoria='futebol', horario_exibicao=datetime.now())
+        Programa.objects.create(nome='Programa Teste', categoria=1)
 
     def test_nome_content(self):
         programa = Programa.objects.get(id=1)
@@ -19,21 +19,18 @@ class ProgramaTestCase(TestCase):
 
     def test_list_programa(self):
         
-        client = Client()
-        response = client.get('/api/programa/')
+        response = self.client.get(reverse('programa-list'))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data[0]['nome'] , 'Programa Teste')
 
     def test_get_programa(self):
 
-        client = Client()
-        response = client.get('/api/programa/1/')
+        response = self.client.get('/api/programa/1/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['nome'] , 'Programa Teste')
 
     def test_get_programa_error(self):
 
-        client = Client()
-        response = client.get('/api/programa/2/')
+        response = self.client.get('/api/programa/2/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEqual(response.data['detail'] , "Não encontrado.")

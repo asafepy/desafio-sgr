@@ -19,21 +19,18 @@ class RadioTestCase(TestCase):
 
     def test_list_radio(self):
         
-        client = Client()
-        response = client.get('/api/radio/')
+        response = self.client.get('/api/radio/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data[0]['nome'] , 'Nova Radio')
 
     def test_get_radio(self):
 
-        client = Client()
-        response = client.get('/api/radio/1/')
+        response = self.client.get('/api/radio/1/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['nome'] , 'Nova Radio')
 
     def test_get_radio_error(self):
 
-        client = Client()
-        response = client.get('/api/radio/2/')
+        response = self.client.get('/api/radio/2/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEqual(response.data['detail'] , "Não encontrado.")
