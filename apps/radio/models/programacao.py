@@ -25,18 +25,8 @@ class GradeProgramacao(models.Model):
     grade = models.ForeignKey(Grade, verbose_name="Grade de Programação", related_name='grade_programacao',  on_delete=models.CASCADE)
     programa = models.ForeignKey(Programa, 
                                  related_name='programas', 
-                                #  limit_choices_to={'radio_id': self.grade__radio}, 
                                  verbose_name="Programa", 
                                  on_delete=models.CASCADE)
-
-
     class Meta:
         verbose_name = 'Programa'
         verbose_name_plural = 'Programas'
-
-    def get_programa_atual(self):
-        programas = self.programa
-        print(programas)
-        return {}
-
-

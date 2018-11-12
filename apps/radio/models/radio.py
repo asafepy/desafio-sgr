@@ -19,7 +19,6 @@ class Radio(models.Model):
         from apps.radio.models.programa import Programa
         return Programa.objects.filter(radio=self.pk).values("id", "nome")
 
-
     def make_url(self):
         return '/api/programa-atual/',self.pk,'/'
 
