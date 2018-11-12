@@ -29,7 +29,7 @@ class RadioTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['nome'] , 'Nova Radio')
 
-    def test_get_radio_error(self):
+    def test_get_radio_error_404(self):
 
         response = self.client.get(reverse('radio-detail', args=[self.radio.id + 1]))
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)

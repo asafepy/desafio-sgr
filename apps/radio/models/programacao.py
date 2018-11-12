@@ -1,6 +1,7 @@
 from django.db import models
 from apps.radio.models import Radio
 from apps.radio.models import Programa
+from datetime import datetime
 
 class Grade(models.Model):
     

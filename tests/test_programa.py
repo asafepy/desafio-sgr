@@ -26,7 +26,7 @@ class ProgramaTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertContains(response, 'Programa Teste')
 
-    def test_get_programa_error(self):
+    def test_get_programa_error_404(self):
 
         response = self.client.get(reverse('programa-detail', args=[self.programa.id + 1]))
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
