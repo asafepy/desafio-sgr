@@ -82,3 +82,4 @@ acessar:
 
 - A aplicação core detém configurações para autenticação via REST API e segurança dos endpoins via Token.
 - Desconsiderar a aplicação apps.core
+- Os testes eu me concentrei apenas em alguns BDD's para testar o comportamento dos endpoins.
