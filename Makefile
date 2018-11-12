@@ -1,6 +1,6 @@
 .SILENT:
 
-install: migrate seed test
+install: migrate seed test server
 
 migrate:
 	./manage.py makemigrations

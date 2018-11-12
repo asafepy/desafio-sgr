@@ -27,11 +27,16 @@ Rules:
  virtualenv -p python3 .virtualenv
  source .virtualenv/bin/activate
  pip install -r requirements.txt
- make test
- make seed
- make server
- make server_stop
+ make install
 ```
+
+# Administrador (CMS):
+Para Publicação e gerenciamento dos programas basta acessar http://meuIp/admin
+acessar com o usuário: admin e senha: admin
+
+Primeiro deve-se cadastrar uma rádio com seus respectivos programas acessando:  http://meuIp/admin/radio/radio/
+Depois acessar http://meuIp/admin/radio/grade/ para criar a grade de programação desta nova rádio.
+Logo depois acessar os endpoins para obter informações e dados do sistema de conteúdo.
 
 # Endpoints:
 
@@ -53,7 +58,7 @@ Rules:
 	
   - /api/grade/
   - /api/grade/{id_radio}/
-        
+
 ## Apps
  
 ### radio
@@ -68,3 +73,9 @@ Rules:
 
 ### api
 - Responsável por concentrar todas as configurações relacionadas aos endpoints da API REST
+
+
+## Observações
+
+- A aplicação core detém configurações para autenticação via REST API e segurança dos endpoins via Token.
+- Desconsiderar a aplicação radio.core
