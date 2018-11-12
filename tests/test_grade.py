@@ -21,7 +21,11 @@ class GradeListViewTest(TestCase):
         cls.grade_programacao = GradeProgramacao.objects.create(
             horario_inicio = datetime.now(),
             horario_fim = datetime.now(),
-            programa = Programa.objects.create(nome='Programa Teste', categoria=1),
+            programa = Programa.objects.create(
+                nome='Programa Teste', 
+                categoria=1, 
+                radio=Radio.objects.create(nome='Grade Teste')
+            ),
             grade = cls.grade,
         )
            

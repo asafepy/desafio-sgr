@@ -5,11 +5,18 @@ from rest_framework import status
 from rest_framework.test import APITestCase, URLPatternsTestCase
 from datetime import datetime
 from apps.radio.models.programa import Programa
-
+from apps.radio.models.radio import Radio
 class ProgramaTestCase(TestCase):
 
-    def setUp(self):
-        self.programa = Programa.objects.create(nome='Programa Teste', categoria=1)
+    @classmethod
+    def setUpTestData(cls):
+        
+        cls.programa = Programa.objects.create(
+            nome='Programa Teste', 
+            categoria=1, 
+            radio=Radio.objects.create(nome='Grade Teste'),
+        )
+        
 
     def test_nome_content(self):
         programa = Programa.objects.get(id=1)
