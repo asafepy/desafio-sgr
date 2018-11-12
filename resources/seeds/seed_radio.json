@@ -3,14 +3,14 @@
   "model": "radio.radio",
   "pk": 1,
   "fields": {
-    "nome": "CBN"
+    "nome": "R\u00e1dio Cidade"
   }
 },
 {
   "model": "radio.radio",
   "pk": 2,
   "fields": {
-    "nome": "SGR"
+    "nome": "R\u00e1dio CBN"
   }
 }
 ]

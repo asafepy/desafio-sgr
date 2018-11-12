@@ -1,7 +1,5 @@
 from django.contrib import admin
 from apps.radio.models import Radio, Programa, GradeProgramacao, Grade
-from apps.radio.forms import GradeProgramacaoForm
-from django.forms import ModelForm
 
 class ProgramaInline(admin.TabularInline):
     model = Programa
@@ -13,7 +11,6 @@ class RadioAdmin(admin.ModelAdmin):
     ]
 
 class GradeProgramacaoInline(admin.TabularInline):
-    form = GradeProgramacaoForm
     model = GradeProgramacao
     extra = 1
 

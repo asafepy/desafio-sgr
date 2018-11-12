@@ -4,7 +4,7 @@ from apps.radio.models.radio import Radio
 class Programa(models.Model):
     
     CATEGORIA_CHOICES = (
-        (1, "Futebol"),
+        (1, "Esporte"),
         (2, "Musica"),
         (3, "Política"),
         (4, "Cultura")

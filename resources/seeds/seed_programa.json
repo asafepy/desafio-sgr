@@ -3,18 +3,18 @@
   "model": "radio.programa",
   "pk": 1,
   "fields": {
-    "nome": "Jogo de futebol",
+    "nome": "Programa Futebol",
     "categoria": 1,
-    "horario_exibicao": "15:00:00"
+    "radio": 1
   }
 },
 {
   "model": "radio.programa",
   "pk": 2,
   "fields": {
-    "nome": "MultMusic",
+    "nome": "Programa Musical",
     "categoria": 2,
-    "horario_exibicao": "15:00:00"
+    "radio": 1
   }
 },
 {
@@ -23,34 +23,34 @@
   "fields": {
     "nome": "Os Pingos Nos Is",
     "categoria": 3,
-    "horario_exibicao": "19:30:00"
+    "radio": 1
   }
 },
 {
   "model": "radio.programa",
   "pk": 4,
   "fields": {
-    "nome": "Debate Ideais Culturais",
+    "nome": "Programa Cultura",
     "categoria": 4,
-    "horario_exibicao": "20:00:00"
+    "radio": 2
   }
 },
 {
   "model": "radio.programa",
   "pk": 5,
   "fields": {
-    "nome": "Jogo de futebol 2",
+    "nome": "Programa Futebol",
     "categoria": 1,
-    "horario_exibicao": "12:00:00"
+    "radio": 2
   }
 },
 {
   "model": "radio.programa",
   "pk": 6,
   "fields": {
-    "nome": "debate qualquer",
-    "categoria": 4,
-    "horario_exibicao": "12:00:00"
+    "nome": "Programa Painel WW",
+    "categoria": 3,
+    "radio": 2
   }
 }
 ]

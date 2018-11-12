@@ -1,0 +1,62 @@
+[
+{
+  "model": "radio.gradeprogramacao",
+  "pk": 1,
+  "fields": {
+    "horario_inicio": "08:00:00",
+    "horario_fim": "16:00:00",
+    "grade": 1,
+    "programa": 2
+  }
+},
+{
+  "model": "radio.gradeprogramacao",
+  "pk": 2,
+  "fields": {
+    "horario_inicio": "16:00:00",
+    "horario_fim": "20:00:00",
+    "grade": 1,
+    "programa": 3
+  }
+},
+{
+  "model": "radio.gradeprogramacao",
+  "pk": 3,
+  "fields": {
+    "horario_inicio": "08:00:00",
+    "horario_fim": "12:00:00",
+    "grade": 1,
+    "programa": 1
+  }
+},
+{
+  "model": "radio.gradeprogramacao",
+  "pk": 4,
+  "fields": {
+    "horario_inicio": "08:00:00",
+    "horario_fim": "12:00:00",
+    "grade": 2,
+    "programa": 6
+  }
+},
+{
+  "model": "radio.gradeprogramacao",
+  "pk": 5,
+  "fields": {
+    "horario_inicio": "13:00:00",
+    "horario_fim": "20:00:00",
+    "grade": 2,
+    "programa": 4
+  }
+},
+{
+  "model": "radio.gradeprogramacao",
+  "pk": 6,
+  "fields": {
+    "horario_inicio": "16:00:00",
+    "horario_fim": "18:00:00",
+    "grade": 2,
+    "programa": 5
+  }
+}
+]

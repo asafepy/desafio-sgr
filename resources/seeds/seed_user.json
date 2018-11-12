@@ -1,10 +1,10 @@
 [
 {
   "model": "auth.user",
-  "pk": 2,
+  "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$120000$SQJlDThgMS6A$ATu69QU1sLrgzdk8SEansOD7+LeAORphtJVt2Ty5+/A=",
-    "last_login": "2018-11-05T22:18:00.618Z",
+    "password": "pbkdf2_sha256$120000$iHR9a4Xbsv50$qbm32ld41l9rsCZknMLPMzKriJQDfQUwOCweO1ADj5g=",
+    "last_login": null,
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -12,7 +12,7 @@
     "email": "",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2018-11-05T20:41:07.314Z",
+    "date_joined": "2018-11-12T11:15:32.283Z",
     "groups": [],
     "user_permissions": []
   }
