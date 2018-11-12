@@ -2,11 +2,12 @@
 
 Construa uma API REST em Django, que será responsável por entregar a grade de programação das rádios e alimentar o conteúdo dos sites e Apps do SGR.
 
-Rules:
- - O programa que está no ar no momento,
- - A lista de programas de cada rádio,
- - A grade de programação de cada rádio.
- - Caso exista algum jogo de futebol programado, ele deverá ter prioridade sobre o programa cadastrado no mesmo horário.
+# Regras:
+### API deve retornar 
+ - o programa que está no ar no momento,
+ - a lista de programas de cada rádio,
+ - a grade de programação de cada rádio.
+ - caso exista algum jogo de futebol programado, ele deverá ter prioridade sobre o programa cadastrado no mesmo horário.
  
  
 # Requesitos
