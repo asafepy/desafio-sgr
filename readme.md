@@ -23,7 +23,7 @@ Construa uma API REST em Django, que será responsável por entregar a grade de 
  5. executar o projeto.
  
  ```console
- git clone https://github.com/asafepy/crawler-challenge.git
+ git clone https://github.com/asafepy/desafio-sgr.git
  cd desafio-sgr
  virtualenv -p python3 .virtualenv
  source .virtualenv/bin/activate
