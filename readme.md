@@ -31,12 +31,14 @@ Rules:
 ```
 
 # Administrador (CMS):
-Para Publicação e gerenciamento dos programas basta acessar http://meuIp/admin
-acessar com o usuário: admin e senha: admin
+1. Para Publicação e gerenciamento dos programas basta acessar http://meuIp/admin
+acessar: 
+- usuário: admin
+- senha: admin
 
-Primeiro deve-se cadastrar uma rádio com seus respectivos programas acessando:  http://meuIp/admin/radio/radio/
-Depois acessar http://meuIp/admin/radio/grade/ para criar a grade de programação desta nova rádio.
-Logo depois acessar os endpoins para obter informações e dados do sistema de conteúdo.
+1. Primeiro deve-se cadastrar uma rádio com seus respectivos programas acessando:  http://meuIp/admin/radio/radio/
+2. Depois acessar http://meuIp/admin/radio/grade/ para criar a grade de programação desta nova rádio.
+3. Logo depois acessar os endpoins para obter informações e dados do sistema de conteúdo.
 
 # Endpoints:
 
