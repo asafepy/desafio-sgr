@@ -56,16 +56,12 @@ class ProgramaAtualViewSet(viewsets.ViewSet):
 class ProgramaViewSet(viewsets.ViewSet):
 
     def list(self, request):
-        radio = request.GET.get('radio', None)
-        
-
-        queryset = Programa.objects.filter(radio_id=radio)
-        # programa = get_object_or_404(queryset, radio_id=radio)
+        queryset = Programa.objects.all()
         serializer = ProgramaSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
-        queryset = Radio.objects.all()
+        queryset = Programa.objects.all()
         programa_atual = get_object_or_404(queryset, pk=pk)
         serializer = ProgramaAtualSerializer(programa_atual, context={'request': request})
         return Response(serializer.data)
