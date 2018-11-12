@@ -27,6 +27,7 @@ Construa uma API REST em Django, que será responsável por entregar a grade de 
  cd desafio-sgr
  virtualenv -p python3 .virtualenv
  source .virtualenv/bin/activate
+ git checkout develop
  pip install -r requirements.txt
  make install
 ```
