@@ -80,4 +80,4 @@ acessar:
 ## Observações
 
 - A aplicação core detém configurações para autenticação via REST API e segurança dos endpoins via Token.
-- Desconsiderar a aplicação radio.core
+- Desconsiderar a aplicação apps.core
