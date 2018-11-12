@@ -35,6 +35,5 @@ class Radio(models.Model):
                 
         for item in grade_programacao:
             return {'programa': item.programa.nome}
-
-        
+            
         return {}
